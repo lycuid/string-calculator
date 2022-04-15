@@ -1,0 +1,19 @@
+quick run: (simple string)
+  $ runghc Main.hs '1,2,3,4'
+
+quick run: (string with newline)
+  $ runghc Main.hs $'1,2,3\n4'
+  $ runghc Main.hs $'//;\n1;2;3\n4'
+
+Using Cabal.
+============
+update and build first:
+  $ cabal v2-update
+  $ cabal v2-build
+
+run with cabal:
+  $ cabal v2-run stringcalc '1,2,3,4'
+  $ cabal v2-run stringcalc $'//;\n1\n2\n3;4'
+
+run tests: (includes dependencies, runs only with cabal)
+  $ cabal v2-run tests

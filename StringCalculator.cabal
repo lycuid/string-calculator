@@ -1,0 +1,25 @@
+cabal-version:  2.4
+name:           stringcalc
+version:        0.1.0.0
+author:         Abhishek Kadam
+maintainer:     lycuid@gmail.com
+license:        MIT
+build-type:     Simple
+
+common opts
+  ghc-options:      -O3 -Wall -Wextra
+  default-language: Haskell2010
+
+common modules
+  hs-source-dirs:   ., StringCalculator
+  other-modules:    StringCalculator StringCalculator.Parser
+
+executable stringcalc
+  import:           opts, modules
+  main-is:          Main.hs
+  build-depends:    base
+
+executable tests
+  import:           opts, modules
+  main-is:          Tests.hs
+  build-depends:    base, HUnit
